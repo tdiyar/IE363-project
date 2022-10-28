@@ -92,12 +92,13 @@ class World:
         image_np = np.stack(image)
         if return_np:
             return image_np
-        fig, ax = plt.subplots(  )
+        
+        fig, ax = plt.subplots()
+        
         ax.imshow (image_np)
         ax.set_title(f'World at iteration: {self.iteration}')
         fig.set_size_inches(5,5)
-        fig.show()
-        
+        plt.show()               
     
     def get_neighbors(self, x, y, use_neibors = 1):
         grid_n  = 2*use_neibors+1
